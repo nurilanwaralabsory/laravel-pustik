@@ -64,12 +64,17 @@
                             <li><a href="index.html" class="active">Home</a></li>
                             <li><a href="browse.html">Browse</a></li>
                             <li><a href="details.html">Details</a></li>
-                            <li class="mt-1">
-                                <a href="#">{{ Auth::user()->name }}
-                                    <img src="{{ asset('template') }}/assets/images/profile-header.jpg" alt=""
-                                        style="width: 20px">
-                                </a>
-                            </li>
+                            <form method="POST" action="{{ route('logout') }}">
+                                <li class="mt-1" :href="route('logout')"
+                                    onclick="event.preventDefault();
+                                    this.closest('form').submit();">
+                                    @csrf
+                                    <a href="#">{{ Auth::user()->name }}
+                                        <img src="{{ asset('template') }}/assets/images/profile-header.jpg"
+                                            alt="" style="width: 20px">
+                                    </a>
+                                </li>
+                            </form>
                         </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>
@@ -108,21 +113,20 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="heading-section">
-                                    <h4><em>Most Popular</em> Right Now</h4>
+                                    <h4><em>Most Popular Books</em> Right Now</h4>
                                 </div>
                                 <div class="row">
-                                    <div class="col-lg-3 col-sm-6">
-                                        <div class="item">
-                                            <img src="{{ asset('template') }}/assets/images/popular-01.jpg"
-                                                alt="">
-                                            <h4>Fortnite<br><span>Sandbox</span></h4>
-                                            <ul>
-                                                <li><i class="fa fa-star"></i> 4.8</li>
-                                                <li><i class="fa fa-download"></i> 2.3M</li>
-                                            </ul>
+                                    @foreach ($books as $book)
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="item">
+                                                <img src="{{ $book->cover }}" alt="">
+                                                <h4>
+                                                    {{ $book->title }}<br><span>{{ $book->author }}</span></h4>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-3 col-sm-6">
+                                    @endforeach
+
+                                    {{-- <div class="col-lg-3 col-sm-6">
                                         <div class="item">
                                             <img src="{{ asset('template') }}/assets/images/popular-02.jpg"
                                                 alt="">
@@ -204,7 +208,7 @@
                                                 <li><i class="fa fa-download"></i> 2.3M</li>
                                             </ul>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                     <div class="col-lg-12">
                                         <div class="main-button">
                                             <a href="browse.html">Discover Popular</a>
