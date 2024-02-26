@@ -47,7 +47,7 @@
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <a href="index.html" class="logo">
-                            <span class="fs-2 fw-bolder" style="color: #e75e8d">PUSTIK</span>
+                            <span class="fs-2 fw-bolder" style="color: #e75e8d">FAJAR</span>
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Search End ***** -->
@@ -61,8 +61,8 @@
                         <!-- ***** Search End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li><a href="index.html" class="active">Home</a></li>
-                            <li><a href="browse.html">Browse</a></li>
+                            <li><a href="{{route('dashboard')}}">Home</a></li>
+                            <li><a href="browse.html" class="active">Browse</a></li>
                             <li><a href="details.html">Details</a></li>
                             <form method="POST" action="{{ route('logout') }}">
                                 <li class="mt-1" :href="route('logout')"
@@ -108,6 +108,73 @@
                     </div>
                     <!-- ***** Banner End ***** -->
 
+                     <!-- ***** Featured Games Start ***** -->
+          <div class="row mt-5">
+            <div class="col-lg-8">
+              <div class="featured-games header-text">
+                <div class="heading-section">
+                  <h4><em>Most Popular Books</em> Right Now</h4>
+                </div>
+                <div class="owl-features owl-carousel">
+                    @foreach ($books as $book)
+                  <div class="item">
+                    <div class="thumb">
+                      <img style="height: 45vh" src="{{$book->cover}}" alt="">
+                      <div class="hover-effect">
+                        <h6><a href="#">Details</a></h6>
+                      </div>
+                    </div>
+                    <h4>{{$book->title}}<br><span>{{$book->author}}</span></h4>
+                  </div>
+                  @endforeach
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="top-downloaded">
+                <div class="heading-section">
+                  <h4><em>Top</em> Downloaded</h4>
+                </div>
+                <ul>
+                  <li>
+                    <img src="{{asset('template')}}/assets/images/game-01.jpg" alt="" class="templatemo-item">
+                    <h4>Fortnite</h4>
+                    <h6>Sandbox</h6>
+                    <span><i class="fa fa-star" style="color: yellow;"></i> 4.9</span>
+                    <span><i class="fa fa-download" style="color: #ec6090;"></i> 2.2M</span>
+                    <div class="download">
+                      <a href="#"><i class="fa fa-download"></i></a>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="{{asset('template')}}/assets/images/game-02.jpg" alt="" class="templatemo-item">
+                    <h4>CS-GO</h4>
+                    <h6>Legendary</h6>
+                    <span><i class="fa fa-star" style="color: yellow;"></i> 4.9</span>
+                    <span><i class="fa fa-download" style="color: #ec6090;"></i> 2.2M</span>
+                    <div class="download">
+                      <a href="#"><i class="fa fa-download"></i></a>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="{{asset('template')}}/assets/images/game-03.jpg" alt="" class="templatemo-item">
+                    <h4>PugG</h4>
+                    <h6>Battle Royale</h6>
+                    <span><i class="fa fa-star" style="color: yellow;"></i> 4.9</span>
+                    <span><i class="fa fa-download" style="color: #ec6090;"></i> 2.2M</span>
+                    <div class="download">
+                      <a href="#"><i class="fa fa-download"></i></a>
+                    </div>
+                  </li>
+                </ul>
+                <div class="text-button">
+                  <a href="profile.html">View All Games</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ***** Featured Games End ***** -->
+
                     <!-- ***** Most Popular Start ***** -->
                     <div class="most-popular">
                         <div class="row">
@@ -118,106 +185,20 @@
                                 <div class="row">
                                     @foreach ($books as $book)
                                         <div class="col-lg-3 col-sm-6">
+                                            <a href="#">
                                             <div class="item">
                                                 <img src="{{ $book->cover }}" alt="">
                                                 <h4>
                                                     {{ $book->title }}<br><span>{{ $book->author }}</span></h4>
                                             </div>
+                                        </a>
                                         </div>
                                     @endforeach
-                                    <div class="col-lg-12">
-                                        <div class="main-button">
-                                            <a href="{{route('books')}}">Discover Popular</a>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- ***** Most Popular End ***** -->
-
-                    <!-- ***** Gaming Library Start ***** -->
-                    <div class="gaming-library">
-                        <div class="col-lg-12">
-                            <div class="heading-section">
-                                <h4><em>Your Gaming</em> Library</h4>
-                            </div>
-                            <div class="item">
-                                <ul>
-                                    <li><img src="{{ asset('template') }}/assets/images/game-01.jpg" alt=""
-                                            class="templatemo-item">
-                                    </li>
-                                    <li>
-                                        <h4>Dota 2</h4><span>Sandbox</span>
-                                    </li>
-                                    <li>
-                                        <h4>Date Added</h4><span>24/08/2036</span>
-                                    </li>
-                                    <li>
-                                        <h4>Hours Played</h4><span>634 H 22 Mins</span>
-                                    </li>
-                                    <li>
-                                        <h4>Currently</h4><span>Downloaded</span>
-                                    </li>
-                                    <li>
-                                        <div class="main-border-button border-no-active"><a
-                                                href="#">Donwloaded</a></div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="item">
-                                <ul>
-                                    <li><img src="{{ asset('template') }}/assets/images/game-02.jpg" alt=""
-                                            class="templatemo-item">
-                                    </li>
-                                    <li>
-                                        <h4>Fortnite</h4><span>Sandbox</span>
-                                    </li>
-                                    <li>
-                                        <h4>Date Added</h4><span>22/06/2036</span>
-                                    </li>
-                                    <li>
-                                        <h4>Hours Played</h4><span>740 H 52 Mins</span>
-                                    </li>
-                                    <li>
-                                        <h4>Currently</h4><span>Downloaded</span>
-                                    </li>
-                                    <li>
-                                        <div class="main-border-button"><a href="#">Donwload</a></div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="item last-item">
-                                <ul>
-                                    <li><img src="{{ asset('template') }}/assets/images/game-03.jpg" alt=""
-                                            class="templatemo-item">
-                                    </li>
-                                    <li>
-                                        <h4>CS-GO</h4><span>Sandbox</span>
-                                    </li>
-                                    <li>
-                                        <h4>Date Added</h4><span>21/04/2036</span>
-                                    </li>
-                                    <li>
-                                        <h4>Hours Played</h4><span>892 H 14 Mins</span>
-                                    </li>
-                                    <li>
-                                        <h4>Currently</h4><span>Downloaded</span>
-                                    </li>
-                                    <li>
-                                        <div class="main-border-button border-no-active"><a
-                                                href="#">Donwloaded</a></div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="main-button">
-                                <a href="profile.html">View Your Library</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- ***** Gaming Library End ***** -->
                 </div>
             </div>
         </div>

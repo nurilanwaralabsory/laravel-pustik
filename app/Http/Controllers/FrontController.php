@@ -15,4 +15,12 @@ class FrontController extends Controller
             'books' => $books
         ]);
     }
+
+    public function books()
+    {
+        $books = Book::all();
+        return view('books', [
+            'books' => $books
+        ]);
+    }
 }

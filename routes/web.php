@@ -20,6 +20,8 @@ Route::get('/', function () {
 });
 
 Route::get('/index', [FrontController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/books', [FrontController::class, 'books'])->middleware(['auth', 'verified'])->name('books');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
