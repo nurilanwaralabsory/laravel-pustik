@@ -47,7 +47,7 @@
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <a href="index.html" class="logo">
-                            <span class="fs-2 fw-bolder" style="color: #e75e8d">PUSTIK</span>
+                            <span class="fs-2 fw-bolder" style="color: #e75e8d">FAJAR</span>
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Search End ***** -->
