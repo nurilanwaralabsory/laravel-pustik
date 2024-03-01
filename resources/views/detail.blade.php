@@ -181,12 +181,10 @@ https://templatemo.com/tm-579-cyborg-gaming
               @foreach ($books as $bk)
               <div class="col-lg-6">
                   <div class="item">
+                    <a href="{{ route('detail', $bk->id) }}">
                       <img src="{{ $bk->cover }}" alt="" class="templatemo-item" style="height: 100px">
                       <h4>{{ $bk->title }}</h4><span>{{ $bk->category->category_name }}</span>
-                      <ul>
-                          <li><i class="fa fa-star"></i> 4.8</li>
-                          <li><i class="fa fa-download"></i> 2.3M</li>
-                      </ul>
+                    </a>
                   </div>
               </div>
           @endforeach
