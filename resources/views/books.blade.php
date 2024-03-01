@@ -63,7 +63,7 @@
                         <ul class="nav">
                             <li><a href="{{route('dashboard')}}">Home</a></li>
                             <li><a href="browse.html" class="active">Browse</a></li>
-                            <li><a href="details.html">Details</a></li>
+                            <li><a href="#">Details</a></li>
                             <form method="POST" action="{{ route('logout') }}">
                                 <li class="mt-1" :href="route('logout')"
                                     onclick="event.preventDefault();
@@ -91,9 +91,9 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="page-content">
-                    
+
                      <!-- ***** Featured Games Start ***** -->
-          <div class="row mt-5">
+          <div class="row">
             <div class="col-lg-8">
               <div class="featured-games header-text">
                 <div class="heading-section">
