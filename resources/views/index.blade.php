@@ -6,10 +6,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <title>pentil - Perpustakaan Pesantren PeTIK</title>
+    <title>Robby - Perpustakaan Pesantren PeTIK</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('template') }}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -20,7 +19,7 @@
     <link rel="stylesheet" href="{{ asset('template') }}/assets/css/templatemo-cyborg-gaming.css">
     <link rel="stylesheet" href="{{ asset('template') }}/assets/css/owl.css">
     <link rel="stylesheet" href="{{ asset('template') }}/assets/css/animate.css">
-    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
     @vite(['resources/scss/app.css', 'resources/js/app.js'])
 </head>
 
@@ -53,8 +52,7 @@
                         <!-- ***** Search End ***** -->
                         <div class="search-input">
                             <form id="search" action="#">
-                                <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword"
-                                    onkeypress="handle" />
+                                <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword" onkeypress="handle" />
                                 <i class="fa fa-search"></i>
                             </form>
                         </div>
@@ -65,13 +63,11 @@
                             <li><a href="browse.html">Browse</a></li>
                             <li><a href="details.html">Details</a></li>
                             <form method="POST" action="{{ route('logout') }}">
-                                <li class="mt-1" :href="route('logout')"
-                                    onclick="event.preventDefault();
+                                <li class="mt-1" :href="route('logout')" onclick="event.preventDefault();
                                     this.closest('form').submit();">
                                     @csrf
                                     <a href="#">{{ Auth::user()->name }}
-                                        <img src="{{ asset('template') }}/assets/images/profile-header.jpg"
-                                            alt="" style="width: 20px">
+                                        <img src="{{ asset('template') }}/assets/images/profile-header.jpg" alt="" style="width: 20px">
                                     </a>
                                 </li>
                             </form>
@@ -117,13 +113,14 @@
                                 </div>
                                 <div class="row">
                                     @foreach ($books as $book)
-                                        <div class="col-lg-3 col-sm-6">
-                                            <div class="item">
-                                                <img src="{{ $book->cover }}" alt="">
-                                                <h4>
-                                                    {{ $book->title }}<br><span>{{ $book->author }}</span></h4>
-                                            </div>
+                                    <div class="col-lg-3 col-sm-6">
+                                        <div class="item">
+                                            <img src="{{ $book->cover }}" alt="">
+                                            <h4>
+                                                {{ $book->title }}<br><span>{{ $book->author }}</span>
+                                            </h4>
                                         </div>
+                                    </div>
                                     @endforeach
                                     <div class="col-lg-12">
                                         <div class="main-button">
@@ -144,8 +141,7 @@
                             </div>
                             <div class="item">
                                 <ul>
-                                    <li><img src="{{ asset('template') }}/assets/images/game-01.jpg" alt=""
-                                            class="templatemo-item">
+                                    <li><img src="{{ asset('template') }}/assets/images/game-01.jpg" alt="" class="templatemo-item">
                                     </li>
                                     <li>
                                         <h4>Dota 2</h4><span>Sandbox</span>
@@ -160,15 +156,13 @@
                                         <h4>Currently</h4><span>Downloaded</span>
                                     </li>
                                     <li>
-                                        <div class="main-border-button border-no-active"><a
-                                                href="#">Donwloaded</a></div>
+                                        <div class="main-border-button border-no-active"><a href="#">Donwloaded</a></div>
                                     </li>
                                 </ul>
                             </div>
                             <div class="item">
                                 <ul>
-                                    <li><img src="{{ asset('template') }}/assets/images/game-02.jpg" alt=""
-                                            class="templatemo-item">
+                                    <li><img src="{{ asset('template') }}/assets/images/game-02.jpg" alt="" class="templatemo-item">
                                     </li>
                                     <li>
                                         <h4>Fortnite</h4><span>Sandbox</span>
@@ -189,8 +183,7 @@
                             </div>
                             <div class="item last-item">
                                 <ul>
-                                    <li><img src="{{ asset('template') }}/assets/images/game-03.jpg" alt=""
-                                            class="templatemo-item">
+                                    <li><img src="{{ asset('template') }}/assets/images/game-03.jpg" alt="" class="templatemo-item">
                                     </li>
                                     <li>
                                         <h4>CS-GO</h4><span>Sandbox</span>
@@ -205,8 +198,7 @@
                                         <h4>Currently</h4><span>Downloaded</span>
                                     </li>
                                     <li>
-                                        <div class="main-border-button border-no-active"><a
-                                                href="#">Donwloaded</a></div>
+                                        <div class="main-border-button border-no-active"><a href="#">Donwloaded</a></div>
                                     </li>
                                 </ul>
                             </div>
@@ -229,9 +221,7 @@
                 <div class="col-lg-12">
                     <p>Copyright © 2036 <a href="#">Cyborg Gaming</a> Company. All rights reserved.
 
-                        <br>Design: <a href="https://templatemo.com" target="_blank"
-                            title="free CSS templates">TemplateMo</a> Distributed By <a href="https://themewagon.com"
-                            target="_blank">ThemeWagon</a>
+                        <br>Design: <a href="https://templatemo.com" target="_blank" title="free CSS templates">TemplateMo</a> Distributed By <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
                     </p>
                 </div>
             </div>
