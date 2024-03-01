@@ -60,7 +60,7 @@
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
                             <li><a href="index.html" class="active">Home</a></li>
-                            <li><a href="browse.html">Browse</a></li>
+                            <li><a href="{{route('books')}}">Browse</a></li>
                             <li><a href="details.html">Details</a></li>
                             <form method="POST" action="{{ route('logout') }}">
                                 <li class="mt-1" :href="route('logout')" onclick="event.preventDefault();
@@ -96,7 +96,7 @@
                                     <h6>Welcome To PUSTIK</h6>
                                     <h4><em>Perpustakaan</em> Pesantren PeTIK</h4>
                                     <div class="main-button">
-                                        <a href="browse.html">Browse Book</a>
+                                        <a href="{{route('books')}}">Browse Book</a>
                                     </div>
                                 </div>
                             </div>
