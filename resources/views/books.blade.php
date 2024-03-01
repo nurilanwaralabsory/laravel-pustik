@@ -47,7 +47,7 @@
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <a href="index.html" class="logo">
-                            <span class="fs-2 fw-bolder" style="color: #e75e8d">FAJAR</span>
+                            <span class="fs-2 fw-bolder" style="color: #e75e8d">PUSTIK</span>
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Search End ***** -->
@@ -91,23 +91,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="page-content">
-
-                    <!-- ***** Banner Start ***** -->
-                    <div class="main-banner">
-                        <div class="row">
-                            <div class="col-lg-7">
-                                <div class="header-text">
-                                    <h6>Welcome To PUSTIK</h6>
-                                    <h4><em>Perpustakaan</em> Pesantren PeTIK</h4>
-                                    <div class="main-button">
-                                        <a href="browse.html">Browse Book</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- ***** Banner End ***** -->
-
+                    
                      <!-- ***** Featured Games Start ***** -->
           <div class="row mt-5">
             <div class="col-lg-8">
