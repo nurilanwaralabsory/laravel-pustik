@@ -25,8 +25,9 @@ class FrontController extends Controller
     }
     public function detail(Request $request)
     {
-        $books = Book::all();
+        $excludedIds = [$request->id];
         $book =  Book::find($request->id);
+        $books = Book::whereNotIn('id', $excludedIds)->get();
         return view('detail', compact('book', 'books'));
     }
 }

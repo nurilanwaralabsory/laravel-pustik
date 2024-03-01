@@ -52,7 +52,7 @@ https://templatemo.com/tm-579-cyborg-gaming
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
                     <a href="#" class="logo">
-                        <img src="{{ asset('template') }}/assets/images/logo.png" alt="">
+                      <span class="fs-2 fw-bolder" style="color: #e75e8d">PUSTIK</span>
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Search End ***** -->
@@ -65,9 +65,9 @@ https://templatemo.com/tm-579-cyborg-gaming
                     <!-- ***** Search End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="browse.html">Browse</a></li>
-                        <li><a href="details.html" class="active">Details</a></li>
+                        <li><a href="{{ route('dashboard') }}">Home</a></li>
+                        <li><a href="{{ route('books') }}">Books</a></li>
+                        <li><a href="#" class="active">Details</a></li>
                         <li><a href="streams.html">Streams</a></li>
                         <li><a href="profile.html">Profile <img src="assets/images/profile-header.jpg" alt=""></a></li>
                     </ul>   
@@ -117,7 +117,7 @@ https://templatemo.com/tm-579-cyborg-gaming
                                             </tr>
                                             <tr>
                                                 <th>Category</th>
-                                                <td>{{ $book->category_id }}</td>
+                                                <td>{{ $book->category->category_name }}</td>
                                             </tr>
                                     </table>
                                 </div>
@@ -156,7 +156,7 @@ https://templatemo.com/tm-579-cyborg-gaming
                       <img src="{{ asset('template') }}/assets/images/details-03.jpg" alt="" style="border-radius: 23px; margin-bottom: 30px;">
                     </div>
                     <div class="col-lg-12">
-                      {{-- <p>{{ $book->description }}</p> --}}
+                      <p>{{ $book->description }}</p>
                     </div>
                     <div class="col-lg-12">
                       <div class="main-border-button">
@@ -180,16 +180,16 @@ https://templatemo.com/tm-579-cyborg-gaming
               </div>
               @foreach ($books as $bk)
               <div class="col-lg-6">
-                <div class="item">
-                  <img src="{{ $bk->cover }}" alt="" class="templatemo-item">
-                  <h4>{{ $bk->title }}</h4><span>{{ $bk->category_id }}</span>
-                  <ul>
-                    <li><i class="fa fa-star"></i> 4.8</li>
-                    <li><i class="fa fa-download"></i> 2.3M</li>
-                  </ul>
-                </div>
+                  <div class="item">
+                      <img src="{{ $bk->cover }}" alt="" class="templatemo-item" style="height: 100px">
+                      <h4>{{ $bk->title }}</h4><span>{{ $bk->category->category_name }}</span>
+                      <ul>
+                          <li><i class="fa fa-star"></i> 4.8</li>
+                          <li><i class="fa fa-download"></i> 2.3M</li>
+                      </ul>
+                  </div>
               </div>
-              @endforeach
+          @endforeach
             </div>
           </div>
           <!-- ***** Other End ***** -->
