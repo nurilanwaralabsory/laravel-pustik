@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Borrower;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class BorrowerController extends Controller
@@ -10,9 +11,21 @@ class BorrowerController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public $borrower;
+    public function __construct()
+    {
+        $this->borrower = new Borrower();
+    }
     public function index()
     {
-        //
+        $borrower = Borrower::all();
+        $no = 1;
+        $borrower->each(function ($deskripsi) {
+            $deskripsi->limitedDescription = Str::limit($deskripsi->deskripsi, 100, '[...]');
+        });
+
+        return view('dashboard', compact('borrower', 'no'));
+
     }
 
     /**

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\BorrowerController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,9 +20,11 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::get('/admin', function () {
-    return view('dashboard');
-})->middleware('auth')->name('admin');
+// Route::get('/admin', function () {
+//     return view('dashboard');
+// })->middleware('auth')->name('admin');
+
+Route::get('/admin', [BorrowerController::class, 'index'])->middleware(['auth'])->name('admin');
 
 Route::get('/index', [FrontController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/books', [FrontController::class, 'books'])->middleware(['auth', 'verified'])->name('books');
