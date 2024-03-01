@@ -6,7 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 
     <title>PUSTIK - Perpustakaan Pesantren PeTIK</title>
 
@@ -43,40 +44,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <nav class="main-nav">
-                        <!-- ***** Logo Start ***** -->
-                        <a href="index.html" class="logo">
-                            <span class="fs-2 fw-bolder" style="color: #e75e8d">PUSTIK</span>
-                        </a>
-                        <!-- ***** Logo End ***** -->
-                        <!-- ***** Search End ***** -->
-                        <div class="search-input">
-                            <form id="search" action="#">
-                                <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword" onkeypress="handle" />
-                                <i class="fa fa-search"></i>
-                            </form>
-                        </div>
-                        <!-- ***** Search End ***** -->
-                        <!-- ***** Menu Start ***** -->
-                        <ul class="nav">
-                            <li><a href="index.html" class="active">Home</a></li>
-                            <li><a href="{{route('books')}}">Browse</a></li>
-                            <li><a href="details.html">Details</a></li>
-                            <form method="POST" action="{{ route('logout') }}">
-                                <li class="mt-1" :href="route('logout')" onclick="event.preventDefault();
-                                    this.closest('form').submit();">
-                                    @csrf
-                                    <a href="#">{{ Auth::user()->name }}
-                                        <img src="{{ asset('template') }}/assets/images/profile-header.jpg" alt="" style="width: 20px">
-                                    </a>
-                                </li>
-                            </form>
-                        </ul>
-                        <a class='menu-trigger'>
-                            <span>Menu</span>
-                        </a>
-                        <!-- ***** Menu End ***** -->
-                    </nav>
+                    @include('partials.navbar')
                 </div>
             </div>
         </div>
@@ -96,7 +64,7 @@
                                     <h6>Welcome To PUSTIK</h6>
                                     <h4><em>Perpustakaan</em> Pesantren PeTIK</h4>
                                     <div class="main-button">
-                                        <a href="{{route('books')}}">Browse Book</a>
+                                        <a href="{{ route('books') }}">Browse Book</a>
                                     </div>
                                 </div>
                             </div>
@@ -113,18 +81,18 @@
                                 </div>
                                 <div class="row">
                                     @foreach ($books as $book)
-                                    <div class="col-lg-3 col-sm-6">
-                                        <div class="item">
-                                            <img src="{{ $book->cover }}" alt="">
-                                            <h4>
-                                                {{ $book->title }}<br><span>{{ $book->author }}</span>
-                                            </h4>
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="item">
+                                                <img src="{{ $book->cover }}" alt="">
+                                                <h4>
+                                                    {{ $book->title }}<br><span>{{ $book->author }}</span>
+                                                </h4>
+                                            </div>
                                         </div>
-                                    </div>
                                     @endforeach
                                     <div class="col-lg-12">
                                         <div class="main-button">
-                                            <a href="{{route('books')}}">Discover Popular</a>
+                                            <a href="{{ route('books') }}">Discover Popular</a>
                                         </div>
                                     </div>
                                 </div>
@@ -141,7 +109,8 @@
                             </div>
                             <div class="item">
                                 <ul>
-                                    <li><img src="{{ asset('template') }}/assets/images/game-01.jpg" alt="" class="templatemo-item">
+                                    <li><img src="{{ asset('template') }}/assets/images/game-01.jpg" alt=""
+                                            class="templatemo-item">
                                     </li>
                                     <li>
                                         <h4>Dota 2</h4><span>Sandbox</span>
@@ -156,13 +125,15 @@
                                         <h4>Currently</h4><span>Downloaded</span>
                                     </li>
                                     <li>
-                                        <div class="main-border-button border-no-active"><a href="#">Donwloaded</a></div>
+                                        <div class="main-border-button border-no-active"><a
+                                                href="#">Donwloaded</a></div>
                                     </li>
                                 </ul>
                             </div>
                             <div class="item">
                                 <ul>
-                                    <li><img src="{{ asset('template') }}/assets/images/game-02.jpg" alt="" class="templatemo-item">
+                                    <li><img src="{{ asset('template') }}/assets/images/game-02.jpg" alt=""
+                                            class="templatemo-item">
                                     </li>
                                     <li>
                                         <h4>Fortnite</h4><span>Sandbox</span>
@@ -183,7 +154,8 @@
                             </div>
                             <div class="item last-item">
                                 <ul>
-                                    <li><img src="{{ asset('template') }}/assets/images/game-03.jpg" alt="" class="templatemo-item">
+                                    <li><img src="{{ asset('template') }}/assets/images/game-03.jpg" alt=""
+                                            class="templatemo-item">
                                     </li>
                                     <li>
                                         <h4>CS-GO</h4><span>Sandbox</span>
@@ -198,7 +170,8 @@
                                         <h4>Currently</h4><span>Downloaded</span>
                                     </li>
                                     <li>
-                                        <div class="main-border-button border-no-active"><a href="#">Donwloaded</a></div>
+                                        <div class="main-border-button border-no-active"><a
+                                                href="#">Donwloaded</a></div>
                                     </li>
                                 </ul>
                             </div>
@@ -221,7 +194,9 @@
                 <div class="col-lg-12">
                     <p>Copyright © 2036 <a href="#">Cyborg Gaming</a> Company. All rights reserved.
 
-                        <br>Design: <a href="https://templatemo.com" target="_blank" title="free CSS templates">TemplateMo</a> Distributed By <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                        <br>Design: <a href="https://templatemo.com" target="_blank"
+                            title="free CSS templates">TemplateMo</a> Distributed By <a href="https://themewagon.com"
+                            target="_blank">ThemeWagon</a>
                     </p>
                 </div>
             </div>
