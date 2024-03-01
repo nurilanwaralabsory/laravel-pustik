@@ -22,6 +22,7 @@ class BookFactory extends Factory
             'publisher' => $this->faker->company(),
             'isbn' => $this->faker->ean8(),
             'cover' => $this->faker->imageUrl(640, 480),
+            'description' => $this->faker->text(),
             'category_id' => $this->faker->numberBetween(1, 7),
         ];
     }
