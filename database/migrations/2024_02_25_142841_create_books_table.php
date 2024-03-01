@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('publisher');
             $table->string('isbn');
             $table->string('cover');
+            $table->text('description');
             $table->unsignedBigInteger('category_id');
             $table->timestamps();
 
