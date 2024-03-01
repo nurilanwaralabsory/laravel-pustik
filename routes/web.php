@@ -19,6 +19,10 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+Route::get('/admin', function () {
+    return view('dashboard');
+})->middleware('auth')->name('admin');
+
 Route::get('/index', [FrontController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/books', [FrontController::class, 'books'])->middleware(['auth', 'verified'])->name('books');
 Route::get('/detail/{id}', [FrontController::class, 'detail'])->middleware(['auth', 'verified'])->name('detail');
