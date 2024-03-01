@@ -91,25 +91,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="page-content">
-
-                    <!-- ***** Banner Start ***** -->
-                    <div class="main-banner">
-                        <div class="row">
-                            <div class="col-lg-7">
-                                <div class="header-text">
-                                    <h6>Welcome To PUSTIK</h6>
-                                    <h4><em>Perpustakaan</em> Pesantren PeTIK</h4>
-                                    <div class="main-button">
-                                        <a href="browse.html">Browse Book</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- ***** Banner End ***** -->
-
-                     <!-- ***** Featured Games Start ***** -->
-          <div class="row mt-5">
+          <div class="row ">
             <div class="col-lg-8">
               <div class="featured-games header-text">
                 <div class="heading-section">
@@ -121,7 +103,7 @@
                     <div class="thumb">
                       <img style="height: 45vh" src="{{$book->cover}}" alt="">
                       <div class="hover-effect">
-                        <h6><a href="#">Details</a></h6>
+                        <h6><a href="{{ url('detail' . '/'. $book->id) }}">Details</a></h6>
                       </div>
                     </div>
                     <h4>{{$book->title}}<br><span>{{$book->author}}</span></h4>
@@ -133,7 +115,7 @@
             <div class="col-lg-4">
               <div class="top-downloaded">
                 <div class="heading-section">
-                  <h4><em>Top</em> Downloaded</h4>
+                  <h4><em>Top</em> Books</h4>
                 </div>
                 <ul>
                   <li>
@@ -185,7 +167,7 @@
                                 <div class="row">
                                     @foreach ($books as $book)
                                         <div class="col-lg-3 col-sm-6">
-                                            <a href="#">
+                                            <a href="{{ route('detail', $book->id) }}">
                                             <div class="item">
                                                 <img src="{{ $book->cover }}" alt="">
                                                 <h4>

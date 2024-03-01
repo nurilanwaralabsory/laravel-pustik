@@ -23,4 +23,10 @@ class FrontController extends Controller
             'books' => $books
         ]);
     }
+    public function detail(Request $request)
+    {
+        $books = Book::all();
+        $book =  Book::find($request->id);
+        return view('detail', compact('book', 'books'));
+    }
 }

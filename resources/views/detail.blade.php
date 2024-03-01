@@ -11,14 +11,14 @@
     <title>Cyborg - Awesome HTML5 Template</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('template') }}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-cyborg-gaming.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="{{ asset('template') }}/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="{{ asset('template') }}/assets/css/templatemo-cyborg-gaming.css">
+    <link rel="stylesheet" href="{{ asset('template') }}/assets/css/owl.css">
+    <link rel="stylesheet" href="{{ asset('template') }}/assets/css/animate.css">
     <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
 <!--
 
@@ -51,8 +51,8 @@ https://templatemo.com/tm-579-cyborg-gaming
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
-                        <img src="assets/images/logo.png" alt="">
+                    <a href="#" class="logo">
+                        <img src="{{ asset('template') }}/assets/images/logo.png" alt="">
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Search End ***** -->
@@ -93,7 +93,7 @@ https://templatemo.com/tm-579-cyborg-gaming
               <div class="feature-banner header-text">
                 <div class="row">
                   <div class="col-lg-4">
-                    <img src="assets/images/feature-left.jpg" alt="" style="border-radius: 23px; width: 300px; height: 400px;">
+                    <img src="{{ $book->cover }}" alt="" style="border-radius: 23px; width: 300px; height: 400px;">
                   </div>
                   <div class="col-lg-8">
                     <h2 class="text-center mb-5">Details Buku</h2>
@@ -101,23 +101,23 @@ https://templatemo.com/tm-579-cyborg-gaming
                                     <table class="table table-lg text-white">
                                             <tr>
                                                 <th>Title</th>
-                                                <td></td>
+                                                <td>{{ $book->title }}</td>
                                             </tr>
                                             <tr>
                                                 <th>Author</th>
-                                                <td></td>
+                                                <td>{{ $book->author }}</td>
                                             </tr>
                                             <tr>
                                                 <th>Publisher</th>
-                                                <td></td>
+                                                <td>{{ $book->publisher }}</td>
                                             </tr>
                                             <tr>
                                                 <th>ISBN</th>
-                                                <td></td>
+                                                <td>{{ $book->isbn }}</td>
                                             </tr>
                                             <tr>
                                                 <th>Category</th>
-                                                <td></td>
+                                                <td>{{ $book->category_id }}</td>
                                             </tr>
                                     </table>
                                 </div>
@@ -147,16 +147,16 @@ https://templatemo.com/tm-579-cyborg-gaming
                 <div class="content">
                   <div class="row">
                     <div class="col-lg-4">
-                      <img src="assets/images/details-01.jpg" alt="" style="border-radius: 23px; margin-bottom: 30px;">
+                      <img src="{{ asset('template') }}/assets/images/details-01.jpg" alt="" style="border-radius: 23px; margin-bottom: 30px;">
                     </div>
                     <div class="col-lg-4">
-                      <img src="assets/images/details-02.jpg" alt="" style="border-radius: 23px; margin-bottom: 30px;">
+                      <img src="{{ asset('template') }}/assets/images/details-02.jpg" alt="" style="border-radius: 23px; margin-bottom: 30px;">
                     </div>
                     <div class="col-lg-4">
-                      <img src="assets/images/details-03.jpg" alt="" style="border-radius: 23px; margin-bottom: 30px;">
+                      <img src="{{ asset('template') }}/assets/images/details-03.jpg" alt="" style="border-radius: 23px; margin-bottom: 30px;">
                     </div>
                     <div class="col-lg-12">
-                      <p>Cyborg Gaming is free HTML CSS website template provided by TemplateMo. This is Bootstrap v5.2.0 layout. You can make a <a href="https://paypal.me/templatemo" target="_blank">small contribution via PayPal</a> to info [at] templatemo.com and thank you for supporting. If you want to get the PSD source files, please contact us. Lorem ipsum dolor sit consectetur es dispic dipiscingei elit, sed doers eiusmod lisum hored tempor.</p>
+                      {{-- <p>{{ $book->description }}</p> --}}
                     </div>
                     <div class="col-lg-12">
                       <div class="main-border-button">
@@ -178,66 +178,18 @@ https://templatemo.com/tm-579-cyborg-gaming
                   <h4><em>Other</em> Books</h4>
                 </div>
               </div>
+              @foreach ($books as $bk)
               <div class="col-lg-6">
                 <div class="item">
-                  <img src="assets/images/game-01.jpg" alt="" class="templatemo-item">
-                  <h4>Dota 2</h4><span>Sandbox</span>
+                  <img src="{{ $bk->cover }}" alt="" class="templatemo-item">
+                  <h4>{{ $bk->title }}</h4><span>{{ $bk->category_id }}</span>
                   <ul>
                     <li><i class="fa fa-star"></i> 4.8</li>
                     <li><i class="fa fa-download"></i> 2.3M</li>
                   </ul>
                 </div>
               </div>
-              <div class="col-lg-6">
-                <div class="item">
-                  <img src="assets/images/game-02.jpg" alt="" class="templatemo-item">
-                  <h4>Dota 2</h4><span>Sandbox</span>
-                  <ul>
-                    <li><i class="fa fa-star"></i> 4.8</li>
-                    <li><i class="fa fa-download"></i> 2.3M</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="item">
-                  <img src="assets/images/game-03.jpg" alt="" class="templatemo-item">
-                  <h4>Dota 2</h4><span>Sandbox</span>
-                  <ul>
-                    <li><i class="fa fa-star"></i> 4.8</li>
-                    <li><i class="fa fa-download"></i> 2.3M</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="item">
-                  <img src="assets/images/game-02.jpg" alt="" class="templatemo-item">
-                  <h4>Dota 2</h4><span>Sandbox</span>
-                  <ul>
-                    <li><i class="fa fa-star"></i> 4.8</li>
-                    <li><i class="fa fa-download"></i> 2.3M</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="item">
-                  <img src="assets/images/game-03.jpg" alt="" class="templatemo-item">
-                  <h4>Dota 2</h4><span>Sandbox</span>
-                  <ul>
-                    <li><i class="fa fa-star"></i> 4.8</li>
-                    <li><i class="fa fa-download"></i> 2.3M</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="item">
-                  <img src="assets/images/game-01.jpg" alt="" class="templatemo-item">
-                  <h4>Dota 2</h4><span>Sandbox</span>
-                  <ul>
-                    <li><i class="fa fa-star"></i> 4.8</li>
-                    <li><i class="fa fa-download"></i> 2.3M</li>
-                  </ul>
-                </div>
-              </div>
+              @endforeach
             </div>
           </div>
           <!-- ***** Other End ***** -->
@@ -262,14 +214,14 @@ https://templatemo.com/tm-579-cyborg-gaming
 
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="{{ asset('template') }}/vendor/jquery/jquery.min.js"></script>
+  <script src="{{ asset('template') }}/vendor/bootstrap/js/bootstrap.min.js"></script>
 
-  <script src="assets/js/isotope.min.js"></script>
-  <script src="assets/js/owl-carousel.js"></script>
-  <script src="assets/js/tabs.js"></script>
-  <script src="assets/js/popup.js"></script>
-  <script src="assets/js/custom.js"></script>
+  <script src="{{ asset('template') }}/assets/js/isotope.min.js"></script>
+  <script src="{{ asset('template') }}/assets/js/owl-carousel.js"></script>
+  <script src="{{ asset('template') }}/assets/js/tabs.js"></script>
+  <script src="{{ asset('template') }}/assets/js/popup.js"></script>
+  <script src="{{ asset('template') }}/assets/js/custom.js"></script>
 
 
   </body>
