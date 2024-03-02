@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
 use App\Models\Borrower;
+use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
@@ -19,9 +21,11 @@ class BorrowerController extends Controller
     public function index()
     {
         $borrower = Borrower::all();
+        $book = Book::all();
+        $category = Category::all();
         $no = 1;
 
-        return view('dashboard', compact('borrower', 'no'));
+        return view('dashboard', compact('borrower','book','category', 'no'));
 
     }
 

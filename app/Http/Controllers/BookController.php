@@ -3,16 +3,25 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\Borrower;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    public $book;
+    public function __construct()
+    {
+        $this->book = new Book();
+    }
     public function index()
     {
-        //
+        $book = Book::all();
+        $borrower = Borrower::all();
+        $category = Category::all();
+        $no = 1;
+
+        return view('buku.index', compact('book','category','borrower', 'no'));
     }
 
     /**
