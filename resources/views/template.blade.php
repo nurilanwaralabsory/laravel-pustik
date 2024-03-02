@@ -19,21 +19,21 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('dashboard') }}/assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="{{ asset('dashboard') }}/assets/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('dash') }}/assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="{{ asset('dash') }}/assets/img/favicon.png">
   <title>
     PUSTIK | Dashboard
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
   <!-- Nucleo Icons -->
-  <link href="{{ asset('dashboard') }}/assets/css/nucleo-icons.css" rel="stylesheet" />
-  <link href="{{ asset('dashboard') }}/assets/css/nucleo-svg.css" rel="stylesheet" />
+  <link href="{{ asset('dash') }}/assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="{{ asset('dash') }}/assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-  <link href="{{ asset('dashboard') }}/assets/css/nucleo-svg.css" rel="stylesheet" />
+  <link href="{{ asset('dash') }}/assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
-  <link id="pagestyle" href="{{ asset('dashboard') }}/assets/css/soft-ui-dashboard.css?v=1.0.7" rel="stylesheet" />
+  <link id="pagestyle" href="{{ asset('dash') }}/assets/css/soft-ui-dashboard.css?v=1.0.7" rel="stylesheet" />
   <!-- Nepcha Analytics (nepcha.com) -->
   <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
   <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
@@ -44,7 +44,7 @@
     <div class="sidenav-header">
       <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
       <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/soft-ui-dashboard/pages/dashboard.html " target="_blank">
-        <img src="{{ asset('dashboard') }}/assets/img/logo-ct-dark.png" class="navbar-brand-img h-100" alt="main_logo">
+        <img src="{{ asset('dash') }}/assets/img/logo-ct-dark.png" class="navbar-brand-img h-100" alt="main_logo">
         <span class="ms-1 font-weight-bold">PUSTIK Dashboard</span>
       </a>
     </div>
@@ -52,7 +52,7 @@
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link  active" href="{{ asset('dashboard') }}/pages/dashboard.html">
+          <a class="nav-link  active" href="{{ asset('dash') }}/pages/dashboard.html">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>shop </title>
@@ -72,7 +72,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="{{ asset('dashboard') }}/pages/tables.html">
+          <a class="nav-link  " href="{{ asset('dash') }}/pages/tables.html">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                 <i class="ni ni-books text-lg text-primary text-gradient" aria-hidden="true"></i>
                 <title>Books</title>
@@ -92,7 +92,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="{{ asset('dashboard') }}/pages/billing.html">
+          <a class="nav-link  " href="{{ asset('dash') }}/pages/billing.html">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                 <i class="ni ni-settings text-lg text-primary text-gradient" aria-hidden="true"></i>
                 <title>Categories</title>
@@ -112,7 +112,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="{{ asset('dashboard') }}/pages/virtual-reality.html">
+          <a class="nav-link  " href="{{ asset('dash') }}/pages/virtual-reality.html">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>box-3d-50</title>
@@ -133,7 +133,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="{{ asset('dashboard') }}/pages/rtl.html">
+          <a class="nav-link  " href="{{ asset('dash') }}/pages/rtl.html">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>settings</title>
@@ -157,7 +157,7 @@
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="{{ asset('dashboard') }}/pages/profile.html">
+          <a class="nav-link  " href="{{ asset('dash') }}/pages/profile.html">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 46 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>customer-support</title>
@@ -178,7 +178,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="{{ asset('dashboard') }}/pages/sign-in.html">
+          <a class="nav-link  " href="{{ asset('dash') }}/pages/sign-in.html">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 40 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>document</title>
@@ -198,7 +198,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " href="{{ asset('dashboard') }}/pages/sign-up.html">
+          <a class="nav-link  " href="{{ asset('dash') }}/pages/sign-up.html">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="20px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>spaceship</title>
@@ -223,7 +223,7 @@
     </div>
     <div class="sidenav-footer mx-3 ">
       <div class="card card-background shadow-none card-background-mask-secondary" id="sidenavCard">
-        <div class="full-background" style="background-image: url('{{ asset('dashboard') }}/assets/img/curved-images/white-curved.jpg')"></div>
+        <div class="full-background" style="background-image: url('{{ asset('dash') }}/assets/img/curved-images/white-curved.jpg')"></div>
         <div class="card-body text-start p-3 w-100">
           <div class="icon icon-shape icon-sm bg-white shadow text-center mb-3 d-flex align-items-center justify-content-center border-radius-md">
             <i class="ni ni-diamond text-dark text-gradient text-lg top-0" aria-hidden="true" id="sidenavCardIcon"></i>
@@ -379,7 +379,7 @@
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div>
-                            <img src="{{ asset('dashboard') }}/assets/img/small-logos/logo-xd.svg" class="avatar avatar-sm me-3" alt="xd">
+                            <img src="{{ asset('dash') }}/assets/img/small-logos/logo-xd.svg" class="avatar avatar-sm me-3" alt="xd">
                           </div>
                           <div class="d-flex flex-column justify-content-center">
                             <h6 class="mb-0 text-sm">Soft UI XD Version</h6>
@@ -389,16 +389,16 @@
                       <td>
                         <div class="avatar-group mt-2">
                           <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
-                            <img src="{{ asset('dashboard') }}/assets/img/team-1.jpg" alt="team1">
+                            <img src="{{ asset('dash') }}/assets/img/team-1.jpg" alt="team1">
                           </a>
                           <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
-                            <img src="{{ asset('dashboard') }}/assets/img/team-2.jpg" alt="team2">
+                            <img src="{{ asset('dash') }}/assets/img/team-2.jpg" alt="team2">
                           </a>
                           <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Alexander Smith">
-                            <img src="{{ asset('dashboard') }}/assets/img/team-3.jpg" alt="team3">
+                            <img src="{{ asset('dash') }}/assets/img/team-3.jpg" alt="team3">
                           </a>
                           <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
-                            <img src="{{ asset('dashboard') }}/assets/img/team-4.jpg" alt="team4">
+                            <img src="{{ asset('dash') }}/assets/img/team-4.jpg" alt="team4">
                           </a>
                         </div>
                       </td>
@@ -422,7 +422,7 @@
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div>
-                            <img src="{{ asset('dashboard') }}/assets/img/small-logos/logo-atlassian.svg" class="avatar avatar-sm me-3" alt="atlassian">
+                            <img src="{{ asset('dash') }}/assets/img/small-logos/logo-atlassian.svg" class="avatar avatar-sm me-3" alt="atlassian">
                           </div>
                           <div class="d-flex flex-column justify-content-center">
                             <h6 class="mb-0 text-sm">Add Progress Track</h6>
@@ -432,10 +432,10 @@
                       <td>
                         <div class="avatar-group mt-2">
                           <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
-                            <img src="{{ asset('dashboard') }}/assets/img/team-2.jpg" alt="team5">
+                            <img src="{{ asset('dash') }}/assets/img/team-2.jpg" alt="team5">
                           </a>
                           <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
-                            <img src="{{ asset('dashboard') }}/assets/img/team-4.jpg" alt="team6">
+                            <img src="{{ asset('dash') }}/assets/img/team-4.jpg" alt="team6">
                           </a>
                         </div>
                       </td>
@@ -459,7 +459,7 @@
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div>
-                            <img src="{{ asset('dashboard') }}/assets/img/small-logos/logo-slack.svg" class="avatar avatar-sm me-3" alt="team7">
+                            <img src="{{ asset('dash') }}/assets/img/small-logos/logo-slack.svg" class="avatar avatar-sm me-3" alt="team7">
                           </div>
                           <div class="d-flex flex-column justify-content-center">
                             <h6 class="mb-0 text-sm">Fix Platform Errors</h6>
@@ -469,10 +469,10 @@
                       <td>
                         <div class="avatar-group mt-2">
                           <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
-                            <img src="{{ asset('dashboard') }}/assets/img/team-3.jpg" alt="team8">
+                            <img src="{{ asset('dash') }}/assets/img/team-3.jpg" alt="team8">
                           </a>
                           <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
-                            <img src="{{ asset('dashboard') }}/assets/img/team-1.jpg" alt="team9">
+                            <img src="{{ asset('dash') }}/assets/img/team-1.jpg" alt="team9">
                           </a>
                         </div>
                       </td>
@@ -496,7 +496,7 @@
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div>
-                            <img src="{{ asset('dashboard') }}/assets/img/small-logos/logo-spotify.svg" class="avatar avatar-sm me-3" alt="spotify">
+                            <img src="{{ asset('dash') }}/assets/img/small-logos/logo-spotify.svg" class="avatar avatar-sm me-3" alt="spotify">
                           </div>
                           <div class="d-flex flex-column justify-content-center">
                             <h6 class="mb-0 text-sm">Launch our Mobile App</h6>
@@ -506,16 +506,16 @@
                       <td>
                         <div class="avatar-group mt-2">
                           <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
-                            <img src="{{ asset('dashboard') }}/assets/img/team-4.jpg" alt="user1">
+                            <img src="{{ asset('dash') }}/assets/img/team-4.jpg" alt="user1">
                           </a>
                           <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
-                            <img src="{{ asset('dashboard') }}/assets/img/team-3.jpg" alt="user2">
+                            <img src="{{ asset('dash') }}/assets/img/team-3.jpg" alt="user2">
                           </a>
                           <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Alexander Smith">
-                            <img src="{{ asset('dashboard') }}/assets/img/team-4.jpg" alt="user3">
+                            <img src="{{ asset('dash') }}/assets/img/team-4.jpg" alt="user3">
                           </a>
                           <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
-                            <img src="{{ asset('dashboard') }}/assets/img/team-1.jpg" alt="user4">
+                            <img src="{{ asset('dash') }}/assets/img/team-1.jpg" alt="user4">
                           </a>
                         </div>
                       </td>
@@ -539,7 +539,7 @@
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div>
-                            <img src="{{ asset('dashboard') }}/assets/img/small-logos/logo-jira.svg" class="avatar avatar-sm me-3" alt="jira">
+                            <img src="{{ asset('dash') }}/assets/img/small-logos/logo-jira.svg" class="avatar avatar-sm me-3" alt="jira">
                           </div>
                           <div class="d-flex flex-column justify-content-center">
                             <h6 class="mb-0 text-sm">Add the New Pricing Page</h6>
@@ -549,7 +549,7 @@
                       <td>
                         <div class="avatar-group mt-2">
                           <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
-                            <img src="{{ asset('dashboard') }}/assets/img/team-4.jpg" alt="user5">
+                            <img src="{{ asset('dash') }}/assets/img/team-4.jpg" alt="user5">
                           </a>
                         </div>
                       </td>
@@ -573,7 +573,7 @@
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div>
-                            <img src="{{ asset('dashboard') }}/assets/img/small-logos/logo-invision.svg" class="avatar avatar-sm me-3" alt="invision">
+                            <img src="{{ asset('dash') }}/assets/img/small-logos/logo-invision.svg" class="avatar avatar-sm me-3" alt="invision">
                           </div>
                           <div class="d-flex flex-column justify-content-center">
                             <h6 class="mb-0 text-sm">Redesign New Online Shop</h6>
@@ -583,10 +583,10 @@
                       <td>
                         <div class="avatar-group mt-2">
                           <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
-                            <img src="{{ asset('dashboard') }}/assets/img/team-1.jpg" alt="user6">
+                            <img src="{{ asset('dash') }}/assets/img/team-1.jpg" alt="user6">
                           </a>
                           <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
-                            <img src="{{ asset('dashboard') }}/assets/img/team-4.jpg" alt="user7">
+                            <img src="{{ asset('dash') }}/assets/img/team-4.jpg" alt="user7">
                           </a>
                         </div>
                       </td>
@@ -786,11 +786,11 @@
     </div>
   </div>
   <!--   Core JS Files   -->
-  <script src="{{ asset('dashboard') }}/assets/js/core/popper.min.js"></script>
-  <script src="{{ asset('dashboard') }}/assets/js/core/bootstrap.min.js"></script>
-  <script src="{{ asset('dashboard') }}/assets/js/plugins/perfect-scrollbar.min.js"></script>
-  <script src="{{ asset('dashboard') }}/assets/js/plugins/smooth-scrollbar.min.js"></script>
-  <script src="{{ asset('dashboard') }}/assets/js/plugins/chartjs.min.js"></script>
+  <script src="{{ asset('dash') }}/assets/js/core/popper.min.js"></script>
+  <script src="{{ asset('dash') }}/assets/js/core/bootstrap.min.js"></script>
+  <script src="{{ asset('dash') }}/assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="{{ asset('dash') }}/assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <script src="{{ asset('dash') }}/assets/js/plugins/chartjs.min.js"></script>
   <script>
     var ctx = document.getElementById("chart-bars").getContext("2d");
 
@@ -973,7 +973,7 @@
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="{{ asset('dashboard') }}/assets/js/soft-ui-dashboard.min.js?v=1.0.7"></script>
+  <script src="{{ asset('dash') }}/assets/js/soft-ui-dashboard.min.js?v=1.0.7"></script>
 </body>
 
 </html>

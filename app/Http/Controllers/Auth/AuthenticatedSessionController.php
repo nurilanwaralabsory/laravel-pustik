@@ -42,7 +42,7 @@ class AuthenticatedSessionController extends Controller
 
         // ternary, klo role usernya hanya 2
         return redirect()->intended(
-            auth()->user()->role == 'admin' ? route('admin') : route('dashboard')
+            auth()->user()->role == 'admin' ? route('admin') : route('user')
         );
     }
 

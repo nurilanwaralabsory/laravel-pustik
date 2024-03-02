@@ -20,9 +20,6 @@ class BorrowerController extends Controller
     {
         $borrower = Borrower::all();
         $no = 1;
-        $borrower->each(function ($deskripsi) {
-            $deskripsi->limitedDescription = Str::limit($deskripsi->deskripsi, 100, '[...]');
-        });
 
         return view('dashboard', compact('borrower', 'no'));
 
