@@ -117,43 +117,7 @@
                 </div>
             </div>
         </div>
-        <!-- ***** Featured End ***** -->
-
-        <!-- ***** Details Start ***** -->
-        <div class="game-details">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2>Deskripsi Buku</h2>
-                </div>
-                <div class="col-lg-12">
-                    <div class="content">
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <img src="{{ asset('template') }}/assets/images/details-01.jpg" alt=""
-                                    style="border-radius: 23px; margin-bottom: 30px;">
-                            </div>
-                            <div class="col-lg-4">
-                                <img src="{{ asset('template') }}/assets/images/details-02.jpg" alt=""
-                                    style="border-radius: 23px; margin-bottom: 30px;">
-                            </div>
-                            <div class="col-lg-4">
-                                <img src="{{ asset('template') }}/assets/images/details-03.jpg" alt=""
-                                    style="border-radius: 23px; margin-bottom: 30px;">
-                            </div>
-                            <div class="col-lg-12">
-                                <p>{{ $book->description }}</p>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="main-border-button">
-                                    <a href="#">Pinjam Buku Sekarang</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- ***** Details End ***** -->
+        <!-- ***** Featured End ***** -->-
 
         <!-- ***** Other Start ***** -->
         <div class="other-games">
