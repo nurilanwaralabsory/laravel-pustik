@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Book;
 use App\Models\Borrower;
 use App\Models\Category;
+use App\Models\User;
+use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Http\Request;
 
 
@@ -17,12 +19,13 @@ class BookController extends Controller
     }
     public function index()
     {
-        $book = Book::all();
         $borrower = Borrower::all();
+        $book = Book::all();
+        $user = User::where('role', 'user')->get();
         $category = Category::all();
         $no = 1;
 
-        return view('buku.index', compact('book','category','borrower', 'no'));
+        return view('buku.index', compact('book','category','borrower','user', 'no'));
     }
 
     /**
@@ -30,7 +33,12 @@ class BookController extends Controller
      */
     public function create()
     {
-        //
+        $borrower = Borrower::all();
+        $book = Book::all();
+        $user = User::where('role', 'user')->get();
+        $category = Category::all();
+
+        return view('buku.create', compact('borrower','book','category','user'));
     }
 
     /**
@@ -38,23 +46,35 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        
+
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Book $book)
+    public function show($id)
     {
-        //
+        $buku = Book::findOrFail($id);
+        $borrower = Borrower::all();
+        $book = Book::all();
+        $user = User::where('role', 'user')->get();
+        $category = Category::all();
+
+        return view('buku.show', compact('borrower','book','category','user','buku'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Book $book)
+    public function edit($id)
     {
-        //
+        $buku = Book::findOrFail($id);
+        $borrower = Borrower::all();
+        $book = Book::all();
+        $user = User::where('role', 'user')->get();
+        $category = Category::all();
+
+        return view('buku.edit', compact('borrower','book','category','user','buku'));
     }
 
     /**
@@ -68,8 +88,14 @@ class BookController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Book $book)
+    public function destroy($id)
     {
-        //
+        $book = Book::findOrFail($id);
+
+        $book->delete();
+
+        Alert::success('Berhasil!', 'Data berhasil dihapus');
+
+        return redirect()->route('buku.index');
     }
 }

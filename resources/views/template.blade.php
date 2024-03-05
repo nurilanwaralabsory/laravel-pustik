@@ -40,6 +40,7 @@
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
+    @include('sweetalert::alert')
     <!-- Aside -->
     @yield('aside')
     <!-- End Aside -->
@@ -103,8 +104,8 @@
                   <div class="numbers">
                     <p class="text-sm mb-0 text-capitalize font-weight-bold">Users</p>
                     <h5 class="font-weight-bolder mb-0">
-                      +3,462
-                      <span class="text-danger text-sm font-weight-bolder">Users</span>
+                        {{ $user->count() }}
+                      <span class="text-success text-sm font-weight-bolder">Users</span>
                     </h5>
                   </div>
                 </div>
@@ -123,10 +124,10 @@
               <div class="row">
                 <div class="col-8">
                   <div class="numbers">
-                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Sales</p>
+                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Borrower</p>
                     <h5 class="font-weight-bolder mb-0">
-                      $103,430
-                      <span class="text-success text-sm font-weight-bolder">+5%</span>
+                        {{ $borrower->count() }}
+                      <span class="text-success text-sm font-weight-bolder">Borrowers</span>
                     </h5>
                   </div>
                 </div>
