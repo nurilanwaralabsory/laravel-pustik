@@ -25,7 +25,6 @@ class BorrowerController extends Controller
         $book = Book::all();
         $category = Category::all();
         $no = 1;
-
         return view('dashboard', compact('borrower','book','category', 'no'));
 
     }
@@ -61,10 +60,10 @@ class BorrowerController extends Controller
 
         $validatedData = $request->validate($rules, $messages);
 
-        Alert::success('Succesful', 'Data berhasil ditambahkan');
+        Alert::success('Succesful', 'Peminjaman berhasil');
 
         Borrower::create($validatedData);
-        return redirect('/index');
+        return redirect('/history');
     }
 
     /**
