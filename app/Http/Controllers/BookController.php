@@ -7,6 +7,7 @@ use App\Models\Borrower;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
+
 class BookController extends Controller
 {
     public $book;
@@ -37,7 +38,7 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**

@@ -25,6 +25,7 @@
 </head>
 
 <body>
+    @include('sweetalert::alert')
 
     <!-- ***** Preloader Start ***** -->
     <div id="js-preloader" class="js-preloader">

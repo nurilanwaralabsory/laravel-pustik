@@ -7,6 +7,7 @@ use App\Models\Borrower;
 use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class BorrowerController extends Controller
 {
@@ -42,7 +43,28 @@ class BorrowerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
+        $rules = [
+            'name' => 'required|min:3|max:100',
+            'phone_number' => 'required|min:5|max:20',
+            'address' => 'required|min:3|max:100',
+            'book_id' => 'required',
+            'user_id' => 'required',
+        ];
+        // bikin pesan error
+        $messages = [
+            'required' => ':attribute tidak boleh kosong!',
+            'min' => ':attribute minimal harus 3 huruf',
+            'max' => ':attribute maximal 20 huruf'
+        ];
+        // eksekusi fungsinya
+
+        $validatedData = $request->validate($rules, $messages);
+
+        Alert::success('Succesful', 'Data berhasil ditambahkan');
+
+        Borrower::create($validatedData);
+        return redirect('/index');
     }
 
     /**

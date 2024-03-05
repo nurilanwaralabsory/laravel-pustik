@@ -25,6 +25,7 @@
 </head>
 
 <body>
+    @include('sweetalert::alert')
 
     <!-- ***** Preloader Start ***** -->
     <div id="js-preloader" class="js-preloader">
@@ -64,10 +65,14 @@
                                     <div class="col-lg-4">
                                         <img src="{{ $book->cover }}" alt=""
                                             style="border-radius: 23px; width: 300px; height: 400px;">
-                                        <div class="main-button text-center mt-2">
-                                            <a href="">Pinjam</a>
+                                        <div class="text-center mt-3">
+                                            <button type="button" class="btn btn-primary w-50" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal">
+                                                Borrow
+                                            </button>
                                         </div>
                                     </div>
+                                    @include('modal')
                                     <div class="col-lg-8">
                                         <h2 class="text-center mb-5">Details Books</h2>
                                         <div class="table-responsive">

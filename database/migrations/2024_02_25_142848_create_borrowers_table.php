@@ -16,8 +16,7 @@ return new class extends Migration
             $table->string('name', 100);
             $table->string('phone_number', 20);
             $table->text('address');
-            $table->date('borrow_date');
-            $table->date('return_date');
+            $table->enum('status', ['borrowed', 'returned'])->default('borrowed');
             $table->unsignedBigInteger('book_id');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
