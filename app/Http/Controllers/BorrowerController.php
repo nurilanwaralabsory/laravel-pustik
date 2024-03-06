@@ -23,11 +23,11 @@ class BorrowerController extends Controller
     public function index()
     {
         $borrower = Borrower::all();
-        $book = Book::all();
+        $buku = Book::all();
         $user = User::where('role', 'user')->get();
         $category = Category::all();
         $no = 1;
-        return view('dashboard', compact('borrower','book','category','user', 'no'));
+        return view('dashboard', compact('borrower','buku','category','user', 'no'));
 
     }
 
