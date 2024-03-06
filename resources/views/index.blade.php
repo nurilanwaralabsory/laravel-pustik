@@ -33,10 +33,12 @@
                                     @foreach ($books as $book)
                                         <div class="col-lg-3 col-sm-6">
                                             <div class="item">
-                                                <img src="{{ $book->cover }}" alt="">
-                                                <h4>
-                                                    {{ $book->title }}<br><span>{{ $book->author }}</span>
-                                                </h4>
+                                                <a href="{{ url('detail' . '/' . $book->id) }}">
+                                                    <img src="{{ $book->cover }}" alt="">
+                                                    <h4>
+                                                        {{ $book->title }}<br><span>{{ $book->author }}</span>
+                                                    </h4>
+                                                </a>
                                             </div>
                                         </div>
                                     @endforeach

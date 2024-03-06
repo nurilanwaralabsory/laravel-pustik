@@ -1,15 +1,15 @@
 <nav class="main-nav">
     <!-- ***** Logo Start ***** -->
-    <a href="index.html" class="logo">
+    <a href="/index" class="logo">
         <span class="fs-2 fw-bolder" style="color: #e75e8d">PUSTIK</span>
     </a>
     <!-- ***** Logo End ***** -->
 
     <!-- ***** Menu Start ***** -->
     <ul class="nav">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="{{ route('books') }}">Books</a></li>
-        <li><a href="details.html">About Team</a> </li>
+        <li><a href="/index" class=" {{ Route::is('index') ? 'active' : '' }}">Home</a></li>
+        <li><a href="{{ route('books') }}" class="{{ Route::is('books', 'detail') ? 'active' : '' }}">Books</a></li>
+        <li><a href="{{ route('history') }}" class="{{ Route::is('history') ? 'active' : '' }}">History</a> </li>
 
         <form method="POST" action="{{ route('logout') }}">
             <li class="mt-1" :href="route('logout')"
