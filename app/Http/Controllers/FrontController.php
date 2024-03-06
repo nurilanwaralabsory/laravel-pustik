@@ -6,6 +6,7 @@ use App\Models\Book;
 use App\Models\Borrower;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 
 class FrontController extends Controller
 {
@@ -34,11 +35,15 @@ class FrontController extends Controller
 
     public function history()
     {
+        $date = Carbon::now()->format('j');
         $books = Book::all();
-        $borrowers = Borrower::where('user_id', auth()->user()->id)->get();
+        $borrowers = Borrower::where('user_id', auth()->user()->id)->orderBy('created_at', 'desc')->get();
         return view('history', [
             'borrowers' => $borrowers,
-            'books' => $books
+            'books' => $books,
+            'date' => $date
         ]);
     }
+
+
 }

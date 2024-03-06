@@ -31,6 +31,7 @@ Route::get('/index', [FrontController::class, 'index'])->middleware(['auth', 've
 Route::get('/books', [FrontController::class, 'books'])->middleware(['auth', 'verified'])->name('books');
 Route::get('/history', [FrontController::class, 'history'])->middleware(['auth', 'verified'])->name('history');
 Route::get('/detail/{id}', [FrontController::class, 'detail'])->middleware(['auth', 'verified'])->name('detail');
+Route::get('/return/{id}', [BorrowerController::class, 'return'])->middleware(['auth', 'verified'])->name('return');
 
 
 Route::middleware('auth')->group(function () {

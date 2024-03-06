@@ -87,7 +87,12 @@ class BorrowerController extends Controller
      */
     public function update(Request $request, Borrower $borrower)
     {
-        //
+        $borrower->update([
+            'status' => 'returned',
+        ]);
+
+        Alert::success('Succesful', 'Pengembalian buku berhasil');
+        return redirect('/history');
     }
 
     /**

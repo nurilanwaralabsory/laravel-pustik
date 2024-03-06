@@ -25,6 +25,7 @@
 </head>
 
 <body>
+    @include('sweetalert::alert')
 
     <!-- ***** Preloader Start ***** -->
     <div id="js-preloader" class="js-preloader">
@@ -92,21 +93,28 @@
                                 @foreach ($borrowers as $borrower)
                                     @foreach ($books as $book)
                                         @if ($borrower->book_id == $book->id)
-                                            <div class="row">
+                                            <div class="row mb-4">
                                                 <div class="col-lg-4">
                                                     <img src="{{ $book->cover }}" alt=""
                                                         style="border-radius: 23px;">
+                                                    <p class="text-center">{{ $book->title }}</p>
                                                 </div>
                                                 <div class="col-lg-4 align-self-center">
                                                     <div class="main-info header-text">
-                                                        <span></span>
                                                         <h4>{{ $borrower->name }}</h4>
-                                                        <p>You Haven't Gone Live yet. Go Live By Touching The Button
-                                                            Below.
-                                                        </p>
-                                                        <div class="main-border-button">
-                                                            <a href="#">Start Live Stream</a>
-                                                        </div>
+                                                        <span class="mb-1">{{ $borrower->status }}</span>
+                                                        @if ($borrower->status == 'borrowed')
+                                                            <h5 class="my-2">
+                                                                {{ Carbon\Carbon::parse($borrower->created_at)->addDays(7)->format('d') - $date }}
+                                                                hari
+                                                                lagi
+                                                            </h5>
+                                                            <form action="borrower/{{ $borrower->id }}" method="POST">
+                                                                @method('PUT')
+                                                                @csrf
+                                                                <button class="btn btn-primary">Return</button>
+                                                            </form>
+                                                        @endif
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-4 align-self-center">
