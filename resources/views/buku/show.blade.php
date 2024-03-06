@@ -242,3 +242,87 @@
         </div>
     </nav>
 @endsection
+@section('content')
+    <div class="row mt-4">
+        <div class="col-12">
+        <div class="card mb-4">
+            <div class="card-header pt-4 pb-2">
+                <div class="row">
+                    <div class="col-6 d-flex align-items-center">
+                      <h4 class="mb-0 text-primary text-gradient font-bold">Detail Buku</h4>
+                    </div>
+                    <div class="col-6 text-end">
+                        <a class="btn bg-gradient-warning mb-0" href="{{ route('buku.index') }}"><i class="fas fa-chevron-left me-2"></i>Back</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body px-0 pt-0 pb-2">
+                <div class="row">
+                    <div class="col-3 ps-3">
+                        <img src="{{ asset('upload') }}/{{ $buku->cover }}" alt="" class="w-100">
+                    </div>
+                    <div class="col">
+                        <div class="table-responsive p-0 w-100">
+                            <table class="table align-items-center mb-0">
+                            <thead>
+                                <tr>
+                                    <th class="w-0 text-uppercase text-dark text-sm font-weight-bolder opacity-7">Judul Buku</th>
+                                    <td class="w-0">:</td>
+                                    <td>
+                                        <h6 class="mb-0 text-sm">{{ $buku->title }}</h6>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="w-0 text-uppercase text-dark text-sm font-weight-bolder opacity-7">Penulis</th>
+                                    <td class="w-0">:</td>
+                                    <td>
+                                        <h6 class="mb-0 text-sm">{{ $buku->author }}</h6>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="w-0 text-uppercase text-dark text-sm font-weight-bolder opacity-7">Penerbit</th>
+                                    <td class="w-0">:</td>
+                                    <td>
+                                        <h6 class="mb-0 text-sm">{{ $buku->publisher }}</h6>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="w-0 text-uppercase text-dark text-sm font-weight-bolder opacity-7">ISBN</th>
+                                    <td class="w-0">:</td>
+                                    <td>
+                                        <h6 class="mb-0 text-sm">{{ $buku->isbn }}</h6>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="w-0 text-uppercase text-dark text-sm font-weight-bolder opacity-7">Kategori</th>
+                                    <td class="w-0">:</td>
+                                    <td>
+                                        <h6 class="mb-0 text-sm">{{ $buku->category->category_name }}</h6>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="w-0 text-uppercase text-dark text-sm font-weight-bolder opacity-7">Status</th>
+                                    <td class="w-0">:</td>
+                                    <td>
+                                        <h6 class="mb-0 text-sm">
+                                            {{ $buku->borrower()->exists() }}
+                                        </h6>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="w-0 text-uppercase text-dark text-sm font-weight-bolder opacity-7">Deskripsi</th>
+                                    <td class="w-0">:</td>
+                                    <td>
+                                        <h6 class="mb-0 text-sm">{{ $buku->description }}</h6>
+                                    </td>
+                                </tr>
+                            </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+@endsection

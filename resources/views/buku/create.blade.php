@@ -242,3 +242,96 @@
         </div>
     </nav>
 @endsection
+@section('content')
+    <div class="row mt-4">
+        <div class="card card-white">
+            <div class="card-header pb-0 bg-transparent">
+                <div class="row">
+                    <div class="col-6 align-items-center">
+                        <h3 class="font-weight-bolder text-info text-gradient">Book Create</h3>
+                        <p class="text-danger mb-0 text-sm">(*) Wajib Diisi</p>
+                    </div>
+                    <div class="col-6 text-end">
+                        <a class="btn bg-gradient-warning mb-0" href="{{ route('buku.index') }}"><i class="fas fa-chevron-left me-2"></i>Back</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <form action="{{ route('buku.store') }}" enctype="multipart/form-data" method="POST">
+                    @csrf
+                    <div class="row">
+                        <div class="col">
+                            <label>Judul Buku<small class="text-danger ms-1">*</small></label>
+                            <div class="mb-3">
+                                <input type="text" class="form-control @error('judul') is-invalid @enderror" name="judul" placeholder="Judul Buku" aria-label="Judul Buku" aria-describedby="Judul Buku-addon">
+                                @error('judul')
+                                    <p class="text-danger">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            <!-- Penyesuaian nama input -->
+                            <label>Penulis<small class="text-danger ms-1">*</small></label>
+                            <div class="mb-3">
+                                <input type="text" class="form-control @error('penulis') is-invalid @enderror" name="penulis" placeholder="Penulis" aria-label="Penulis" aria-describedby="Penulis-addon">
+                                <!-- Penyesuaian validasi -->
+                                @error('penulis')
+                                    <p class="text-danger">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            <label>Kategori<small class="text-danger ms-1">*</small></label>
+                            <div class="mb-3">
+                                <select class="form-select @error('kategori') is-invalid @enderror" name="kategori" aria-label="Default select example">
+                                    <option selected hidden></option>
+                                    @foreach ($category as $item)
+                                        <option value="{{ $item->id }}">{{ $item->category_name }}</option>
+                                    @endforeach
+                                </select>
+                                <!-- Penyesuaian validasi -->
+                                @error('kategori')
+                                    <p class="text-danger">{{ $message }}</p>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col">
+                            <!-- Penyesuaian nama input -->
+                            <label>Penerbit<small class="text-danger ms-1">*</small></label>
+                            <div class="mb-3">
+                                <input type="text" class="form-control @error('penerbit') is-invalid @enderror" name="penerbit" placeholder="Penerbit" aria-label="Penerbit" aria-describedby="Penerbit-addon">
+                                <!-- Penyesuaian validasi -->
+                                @error('penerbit')
+                                    <p class="text-danger">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            <label>Sampul Buku<small class="text-danger ms-1">*</small></label>
+                            <div class="mb-3">
+                                <input class="form-control @error('sampul') is-invalid @enderror" name="sampul" type="file" id="formFile">
+                                @error('sampul')
+                                    <p class="text-danger">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            <label>ISBN<small class="text-danger ms-1">*</small></label>
+                            <div class="mb-3">
+                                <input type="text" class="form-control @error('isbn') is-invalid @enderror" name="isbn" placeholder="ISBN" aria-label="isbn" aria-describedby="isbn-addon">
+                                <!-- Penyesuaian validasi -->
+                                @error('isbn')
+                                    <p class="text-danger">{{ $message }}</p>
+                                @enderror
+                            </div>
+                        </div>
+                    </div>
+                    <label>Deskripsi<small class="text-danger ms-1">*</small></label>
+                    <div class="mb-3">
+                        <textarea type="text" class="form-control @error('deskripsi') is-invalid @enderror" name="deskripsi" placeholder="Deskripsi" aria-label="Deskripsi" aria-describedby="Deskripsi-addon"></textarea>
+                        <!-- Penyesuaian validasi -->
+                        @error('deskripsi')
+                            <p class="text-danger">{{ $message }}</p>
+                        @enderror
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0"><i class="fas fa-plus"></i>&nbsp;&nbsp;Add New Book</button>
+                    </div>
+                </form>
+            </div>
+          </div>
+    </div>
+@endsection

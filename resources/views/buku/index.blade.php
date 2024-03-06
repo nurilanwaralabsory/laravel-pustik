@@ -191,11 +191,16 @@
             <h6 class="font-weight-bolder mb-0">Books</h6>
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
-            <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-                <div class="input-group">
-                    <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-                    <input type="text" class="form-control" placeholder="Type here...">
-                </div>
+            <div class="ms-md-auto pt-2 pe-md-3 d-flex align-items-center">
+                <form class="d-flex" role="search" action="{{ route('buku.index') }}" method="GET">
+                    <div class="input-group">
+                        <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
+                        <input class="form-control me-1" type="search" name="search" placeholder="Cari Buku..." aria-label="Search">
+                        <div class="">
+                            <button class="btn bg-gradient-warning mb-0"><i class="fas fa-search"></i>&nbsp;&nbsp;CARI</button>
+                        </div>
+                    </div>
+                </form>
             </div>
             <ul class="navbar-nav  justify-content-end">
                 <li class="nav-item dropdown pe-1 d-flex align-items-center">
@@ -248,7 +253,7 @@
             <div class="card-header pt-4 pb-2">
                 <div class="row">
                     <div class="col-6 d-flex align-items-center">
-                      <h4 class="mb-0 font-semibold">Data Buku</h4>
+                      <h4 class="mb-0 text-primary text-gradient font-bold">Data Buku</h4>
                     </div>
                     <div class="col-6 text-end">
                       <a class="btn bg-gradient-warning mb-0" href="{{ route('buku.create') }}"><i class="fas fa-plus"></i>&nbsp;&nbsp;Add New Book</a>
@@ -273,9 +278,9 @@
                             <tr>
                                 <td>
                                     <div class="d-flex px-2 py-1">
-                                        <span class="text-xs pt-2 ms-1 me-4">{{ $no++ }}</span>
+                                        <span class="text-xs pt-2 ms-1 me-4">{{ ++$no }}</span>
                                     <div>
-                                        <img src="{{ asset('dash') }}/assets/img/team-3.jpg" class="avatar avatar-sm me-3" alt="user4">
+                                        <img src="{{ asset('upload') }}/{{ $buku->cover }}" class="avatar avatar-sm me-3" alt="user4">
                                     </div>
                                     <div class="d-flex flex-column justify-content-center">
                                         <h6 class="mb-0 text-sm">{{ $buku->title }}</h6>
@@ -315,6 +320,16 @@
                             </tr>
                         @endforeach
                     </tbody>
+                    <tfoot>
+                        <tr class="">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="float-end">{{ $book->withQueryString()->links() }}</td>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
             </div>
