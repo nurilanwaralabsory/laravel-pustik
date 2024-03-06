@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Book;
 use App\Models\Borrower;
 use App\Models\Category;
+use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -23,9 +24,10 @@ class BorrowerController extends Controller
     {
         $borrower = Borrower::all();
         $book = Book::all();
+        $user = User::where('role', 'user')->get();
         $category = Category::all();
         $no = 1;
-        return view('dashboard', compact('borrower','book','category', 'no'));
+        return view('dashboard', compact('borrower','book','category','user', 'no'));
 
     }
 
