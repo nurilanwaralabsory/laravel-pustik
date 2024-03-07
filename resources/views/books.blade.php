@@ -14,7 +14,8 @@
                                     @foreach ($books as $book)
                                         <div class="item">
                                             <div class="thumb">
-                                                <img style="height: 45vh" src="{{ $book->cover }}" alt="">
+                                                <img style="height: 45vh" src="{{ asset('upload' . '/' . $book->cover) }}"
+                                                    alt="">
                                                 <div class="hover-effect">
                                                     <h6><a href="{{ url('detail' . '/' . $book->id) }}">Details</a></h6>
                                                 </div>
