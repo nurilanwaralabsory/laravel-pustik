@@ -44,11 +44,11 @@ class BookController extends Controller
     public function create()
     {
         $borrower = Borrower::all();
-        $book = Book::all();
+        $buku = Book::all();
         $user = User::where('role', 'user')->get();
         $category = Category::all();
 
-        return view('buku.create', compact('borrower','book','category','user'));
+        return view('buku.create', compact('borrower','buku','category','user'));
     }
 
     /**

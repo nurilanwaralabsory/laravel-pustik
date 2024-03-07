@@ -15,7 +15,7 @@
                 <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">HOME</h6>
             </li>
             <li class="nav-item">
-            <a class="nav-link " href="{{ route('admin') }}">
+            <a class="nav-link" href="{{ route('admin') }}">
                 <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                 <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <title>shop </title>
@@ -38,9 +38,9 @@
                 <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Manage Data</h6>
             </li>
             <li class="nav-item">
-            <a class="nav-link active" href="{{ route('buku.index') }}">
+            <a class="nav-link " href="{{ route('buku.index') }}">
                 <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                    <i class="ni ni-books text-lg text-white opacity-100" aria-hidden="true"></i>
+                    <i class="ni ni-books text-lg text-primary text-gradient" aria-hidden="true"></i>
                     <title>Books</title>
                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                     <g transform="translate(-1869.000000, -293.000000)" fill="#FFFFFF" fill-rule="nonzero">
@@ -57,9 +57,9 @@
             </a>
             </li>
             <li class="nav-item">
-            <a class="nav-link  " href="{{ route('kategori.index') }}">
+            <a class="nav-link active" href="{{ route('kategori.index') }}">
                 <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                    <i class="ni ni-settings text-lg text-primary text-gradient" aria-hidden="true"></i>
+                    <i class="ni ni-settings text-lg text-white opacity-100" aria-hidden="true"></i>
                     <title>Categories</title>
                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                     <g transform="translate(-2169.000000, -745.000000)" fill="#FFFFFF" fill-rule="nonzero">
@@ -108,16 +108,16 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
             <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="{{ route('admin') }}">Dashboard</a></li>
-            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Books</li>
+            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Categories</li>
             </ol>
-            <h6 class="font-weight-bolder mb-0">Books</h6>
+            <h6 class="font-weight-bolder mb-0">Categories</h6>
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
             <div class="ms-md-auto pt-2 pe-md-3 d-flex align-items-center">
-                <form class="d-flex" role="search" action="{{ route('buku.index') }}" method="GET">
+                <form class="d-flex" role="search" action="{{ route('kategori.index') }}" method="GET">
                     <div class="input-group">
                         <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-                        <input class="form-control me-1" type="search" name="search" placeholder="Cari Buku..." aria-label="Search">
+                        <input class="form-control me-1" type="search" name="search" placeholder="Cari Kategori..." aria-label="Search">
                         <div class="">
                             <button class="btn bg-gradient-warning mb-0"><i class="fas fa-search"></i>&nbsp;&nbsp;CARI</button>
                         </div>
@@ -175,69 +175,45 @@
             <div class="card-header pt-4 pb-2">
                 <div class="row">
                     <div class="col-6 d-flex align-items-center">
-                      <h4 class="mb-0 text-primary text-gradient font-bold">Data Buku</h4>
+                      <h4 class="mb-0 text-primary text-gradient font-bold">Data Kategori</h4>
                     </div>
                     <div class="col-6 text-end">
-                      <a class="btn bg-gradient-warning mb-0" href="{{ route('buku.create') }}"><i class="fas fa-plus"></i>&nbsp;&nbsp;Add New Book</a>
+                      <a class="btn bg-gradient-warning mb-0" href="{{ route('kategori.create') }}"><i class="fas fa-plus"></i>&nbsp;&nbsp;Add New Category</a>
                     </div>
                 </div>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
-            <div class="table-responsive p-0">
+            <div class="table-responsive p-0 w-full">
                 <table class="table align-items-center mb-0">
                 <thead>
                     <tr>
-                        <th style="width: 10px" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"><span class="me-4">#</span>Judul Buku</th>
-                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Penulis</th>
-                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Penerbit</th>
-                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Kategori</th>
-                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
-                        <th class="text-secondary opacity-7"></th>
+                        <th style="width: 10px" class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"><span class="me-4">#</span>Nama Kategori</th>
+                        <td></td>
+                        <td></td>
                     </tr>
                 </thead>
                     <tbody>
-                        @foreach ($book as $buku)
+                        @foreach ($categories as $item)
                             <tr>
                                 <td>
                                     <div class="d-flex px-2 py-1">
                                         <span class="text-xs pt-2 ms-1 me-4">{{ ++$no }}</span>
-                                    <div>
-                                        <img src="{{ asset('upload') }}/{{ $buku->cover }}" class="avatar avatar-sm me-3" alt="user4">
-                                    </div>
                                     <div class="d-flex flex-column justify-content-center">
-                                        <h6 class="mb-0 text-sm">{{ $buku->title }}</h6>
+                                        <h6 class="mb-0 text-sm">{{ $item->category_name }}</h6>
                                         {{-- <p class="text-xs text-secondary mb-0">michael@creative-tim.com</p> --}}
                                     </div>
                                     </div>
                                 </td>
-                                <td>
-                                    <p class="text-xs font-weight-bold mb-0">{{ $buku->author }}</p>
-                                    {{-- <p class="text-xs text-secondary mb-0">Developer</p> --}}
-                                </td>
-                                <td class="align-middle text-center">
-                                    <span class="text-secondary text-xs font-weight-bold">{{ $buku->publisher }}</span>
-                                </td>
-                                <td>
-                                    <p class="text-xs font-weight-bold mb-0">{{ $buku->category->category_name }}</p>
-                                    {{-- <p class="text-xs text-secondary mb-0">Developer</p> --}}
-                                </td>
-                                <td class="align-middle text-center text-sm">
-                                    @if ($buku->borrowers)
-                                        <span class="badge badge-sm bg-gradient-danger">DIPINJAM</span>
-                                    @else
-                                        <span class="badge badge-sm bg-gradient-success">TERSEDIA</span>
-                                    @endif
-                                </td>
-                                <td class="align-middle">
-                                    <a class="btn btn-link text-primary text-gradient px-1 mb-0" href="{{ route('buku.show',$buku->id) }}"><i class="far fa-eye me-2"></i>Detail</a>
-                                    <a class="btn btn-link text-dark px-1 mb-0" href="{{ route('buku.edit',$buku->id) }}"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
-                                    <form action="{{ route('buku.destroy', $buku->id) }}" method="POST" class="d-inline-block">
+                                <td></td>
+                                <td class="align-middle text-end">
+                                    <a class="btn btn-link text-primary text-gradient px-1 mb-0" href="{{ route('kategori.show',$item->id) }}"><i class="far fa-eye me-2"></i>Detail</a>
+                                    <a class="btn btn-link text-dark px-1 mb-0" href="{{ route('kategori.edit',$item->id) }}"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
+                                    <form action="{{ route('kategori.destroy', $item->id) }}" method="POST" class="d-inline-block">
                                         @csrf
                                         @method('DELETE')
                                             <button type="submit" class="btn btn-link text-danger px-1 text-gradient mb-0 " onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data')"><i class="far fa-trash-alt me-2"></i>Delete
                                             </button>
                                     </form>
-
                                 </td>
                             </tr>
                         @endforeach
@@ -246,10 +222,7 @@
                         <tr class="">
                             <td></td>
                             <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td class="float-end">{{ $book->withQueryString()->links() }}</td>
+                            <td class="float-end">{{ $categories->withQueryString()->links() }}</td>
                         </tr>
                     </tfoot>
                 </table>
