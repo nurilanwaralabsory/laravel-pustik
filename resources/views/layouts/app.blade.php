@@ -1,36 +1,87 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<html lang="en">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+<head>
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-            @include('layouts.navigation')
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white dark:bg-gray-800 shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
+    <title>PUSTIK - Perpustakaan Pesantren PeTIK</title>
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
+    <!-- Bootstrap core CSS -->
+    <link href="{{ asset('template') }}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{{ asset('template') }}/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="{{ asset('template') }}/assets/css/templatemo-cyborg-gaming.css">
+    <link rel="stylesheet" href="{{ asset('template') }}/assets/css/owl.css">
+    <link rel="stylesheet" href="{{ asset('template') }}/assets/css/animate.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    @vite(['resources/scss/app.css', 'resources/js/app.js'])
+</head>
+
+<body>
+    @include('sweetalert::alert')
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="js-preloader" class="js-preloader">
+        <div class="preloader-inner">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
-    </body>
+    </div>
+    <!-- ***** Preloader End ***** -->
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    @include('partials.navbar')
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+    @yield('content')
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright © 2036 <a href="#">Cyborg Gaming</a> Company. All rights reserved.
+
+                        <br>Design: <a href="https://templatemo.com" target="_blank"
+                            title="free CSS templates">TemplateMo</a> Distributed By <a href="https://themewagon.com"
+                            target="_blank">ThemeWagon</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Scripts -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{ asset('template') }}/vendor/jquery/jquery.min.js"></script>
+    <script src="{{ asset('template') }}/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="{{ asset('template') }}/assets/js/isotope.min.js"></script>
+    <script src="{{ asset('template') }}/assets/js/owl-carousel.js"></script>
+    <script src="{{ asset('template') }}/assets/js/tabs.js"></script>
+    <script src="{{ asset('template') }}/assets/js/popup.js"></script>
+    <script src="{{ asset('template') }}/assets/js/custom.js"></script>
+
+
+</body>
+
 </html>

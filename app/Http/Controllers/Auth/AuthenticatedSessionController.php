@@ -29,7 +29,21 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        // ini jangan langsung redirect
+        // harus lewat validasi
+        // return redirect()->intended(RouteServiceProvider::HOME);
+
+        // kalau usernya rolenya lebih dari 2
+        // if (auth()->user()->role == 'a') {
+        //     return redirect()->route('admin');
+        // } elseif (auth()->user()->role == 'u') {
+        //     return redirect()->route('user');
+        // }
+
+        // ternary, klo role usernya hanya 2
+        return redirect()->intended(
+            auth()->user()->role == 'admin' ? route('admin') : route('user')
+        );
     }
 
     /**

@@ -20,8 +20,7 @@ class BorrowerFactory extends Factory
             'name' => $this->faker->name(),
             'phone_number' => $this->faker->phoneNumber(),
             'address' => $this->faker->address(),
-            'borrow_date' => $this->faker->date(),
-            'return_date' => $this->faker->date(),
+            'status' => $this->faker->randomElement(['borrowed', 'returned']),
             'book_id' => $this->faker->numberBetween(1, 10),
             'user_id' => $this->faker->numberBetween(1, 20),
         ];

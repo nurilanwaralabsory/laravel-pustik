@@ -2,17 +2,33 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
 use App\Models\Borrower;
+use App\Models\Category;
+use App\Models\User;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class BorrowerController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+    public $borrower;
+    public function __construct()
+    {
+        $this->borrower = new Borrower();
+    }
     public function index()
     {
-        //
+        $borrower = Borrower::all();
+        $buku = Book::all();
+        $user = User::where('role', 'user')->get();
+        $category = Category::all();
+        $no = 1;
+        return view('dashboard', compact('borrower','buku','category','user', 'no'));
+
     }
 
     /**
@@ -28,7 +44,28 @@ class BorrowerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
+        $rules = [
+            'name' => 'required|min:3|max:100',
+            'phone_number' => 'required|min:5|max:20',
+            'address' => 'required|min:3|max:100',
+            'book_id' => 'required',
+            'user_id' => 'required',
+        ];
+        // bikin pesan error
+        $messages = [
+            'required' => ':attribute tidak boleh kosong!',
+            'min' => ':attribute minimal harus 3 huruf',
+            'max' => ':attribute maximal 20 huruf'
+        ];
+        // eksekusi fungsinya
+
+        $validatedData = $request->validate($rules, $messages);
+
+        Alert::success('Succesful', 'Peminjaman berhasil');
+
+        Borrower::create($validatedData);
+        return redirect('/history');
     }
 
     /**
@@ -52,7 +89,12 @@ class BorrowerController extends Controller
      */
     public function update(Request $request, Borrower $borrower)
     {
-        //
+        $borrower->update([
+            'status' => 'returned',
+        ]);
+
+        Alert::success('Succesful', 'Pengembalian buku berhasil');
+        return redirect('/history');
     }
 
     /**
