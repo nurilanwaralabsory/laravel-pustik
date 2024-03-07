@@ -9,7 +9,7 @@
                             <div class="feature-banner header-text">
                                 <div class="row">
                                     <div class="col-lg-4">
-                                        <img src="{{ $book->cover }}" alt=""
+                                        <img src="{{ asset('upload' . '/' . $book->cover) }}" alt=""
                                             style="border-radius: 23px; width: 300px; height: 400px;">
                                         <div class="text-center mt-3">
                                             <button type="button" class="btn btn-primary w-50" data-bs-toggle="modal"
@@ -54,11 +54,11 @@
                             </div>
                         </div>
                         <!-- <div class="col-lg-8">
-                            <div class="thumb">
-                              <img src="assets/images/feature-right.jpg" alt="" style="border-radius: 23px;">
-                              <a href="https://www.youtube.com/watch?v=r1b03uKWk_M" target="_blank"><i class="fa fa-play"></i></a>
-                            </div>
-                          </div> -->
+                                    <div class="thumb">
+                                      <img src="assets/images/feature-right.jpg" alt="" style="border-radius: 23px;">
+                                      <a href="https://www.youtube.com/watch?v=r1b03uKWk_M" target="_blank"><i class="fa fa-play"></i></a>
+                                    </div>
+                                  </div> -->
                     </div>
                 </div>
             </div>
@@ -77,7 +77,8 @@
                     <div class="col-lg-6">
                         <div class="item">
                             <a href="{{ route('detail', $bk->id) }}">
-                                <img src="{{ $bk->cover }}" alt="" class="templatemo-item" style="height: 100px">
+                                <img src="{{ asset('upload' . '/' . $bk->cover) }}" alt="" class="templatemo-item"
+                                    style="height: 100px">
                                 <h4>{{ $bk->title }}</h4><span>{{ $bk->category->category_name }}</span>
                             </a>
                         </div>

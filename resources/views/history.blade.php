@@ -14,10 +14,10 @@
                                     @foreach ($books as $book)
                                         @if ($borrower->book_id == $book->id)
                                             <div class="row mb-4">
-                                                <div class="col-lg-4">
-                                                    <img src="{{ $book->cover }}" alt=""
-                                                        style="border-radius: 23px;">
-                                                    <p class="text-center">{{ $book->title }}</p>
+                                                <div class="col-lg-3">
+                                                    <img src="{{ asset('upload' . '/' . $book->cover) }}" class="w-100"
+                                                        alt="" style="border-radius: 23px;">
+                                                    <h4 class="text-center mt-2">{{ $book->title }}</p>
                                                 </div>
                                                 <div class="col-lg-4 align-self-center">
                                                     <div class="main-info header-text">
@@ -34,7 +34,7 @@
                                                             <form action="borrower/{{ $borrower->id }}" method="POST">
                                                                 @method('PUT')
                                                                 @csrf
-                                                                <button class="btn btn-primary">Return</button>
+                                                                <button class="btn btn-primary mt-3">Return</button>
                                                             </form>
                                                         @endif
                                                     </div>

@@ -26,51 +26,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4">
-                            <div class="top-downloaded">
-                                <div class="heading-section">
-                                    <h4><em>Top</em> Books</h4>
-                                </div>
-                                <ul>
-                                    <li>
-                                        <img src="{{ asset('template') }}/assets/images/game-01.jpg" alt=""
-                                            class="templatemo-item">
-                                        <h4>Fortnite</h4>
-                                        <h6>Sandbox</h6>
-                                        <span><i class="fa fa-star" style="color: yellow;"></i> 4.9</span>
-                                        <span><i class="fa fa-download" style="color: #ec6090;"></i> 2.2M</span>
-                                        <div class="download">
-                                            <a href="#"><i class="fa fa-download"></i></a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <img src="{{ asset('template') }}/assets/images/game-02.jpg" alt=""
-                                            class="templatemo-item">
-                                        <h4>CS-GO</h4>
-                                        <h6>Legendary</h6>
-                                        <span><i class="fa fa-star" style="color: yellow;"></i> 4.9</span>
-                                        <span><i class="fa fa-download" style="color: #ec6090;"></i> 2.2M</span>
-                                        <div class="download">
-                                            <a href="#"><i class="fa fa-download"></i></a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <img src="{{ asset('template') }}/assets/images/game-03.jpg" alt=""
-                                            class="templatemo-item">
-                                        <h4>PugG</h4>
-                                        <h6>Battle Royale</h6>
-                                        <span><i class="fa fa-star" style="color: yellow;"></i> 4.9</span>
-                                        <span><i class="fa fa-download" style="color: #ec6090;"></i> 2.2M</span>
-                                        <div class="download">
-                                            <a href="#"><i class="fa fa-download"></i></a>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <div class="text-button">
-                                    <a href="profile.html">View All Games</a>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
                     <!-- ***** Featured Games End ***** -->
 
@@ -86,7 +42,7 @@
                                         <div class="col-lg-3 col-sm-6">
                                             <a href="{{ route('detail', $book->id) }}">
                                                 <div class="item">
-                                                    <img src="{{ $book->cover }}" alt="">
+                                                    <img src="{{ asset('upload' . '/' . $book->cover) }}" alt="">
                                                     <h4>
                                                         {{ $book->title }}<br><span>{{ $book->author }}</span></h4>
                                                 </div>
