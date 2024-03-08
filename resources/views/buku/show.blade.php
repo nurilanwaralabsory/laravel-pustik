@@ -226,9 +226,11 @@
                                     <th class="w-0 text-uppercase text-dark text-sm font-weight-bolder opacity-7">Status</th>
                                     <td class="w-0">:</td>
                                     <td>
-                                        <h6 class="mb-0 text-sm">
-                                            {{ $buku->borrower()->exists() }}
-                                        </h6>
+                                        @if ($buku->borrowers)
+                                            <h6 class="badge badge-sm bg-gradient-danger">DIPINJAM</h6>
+                                        @else
+                                            <h6 class="badge badge-sm bg-gradient-success">TERSEDIA</h6>
+                                        @endif
                                     </td>
                                 </tr>
                                 <tr>
