@@ -19,7 +19,7 @@ class RoleLevel
     public function handle(Request $request, Closure $next, ...$roles): Response
     {
         // kasih logika klo user itu ada role yang sesuai
-        if ( in_array($request->user()->role, $roles)) {
+        if (in_array($request->user()->role, $roles)) {
             return $next($request);
         }
         // kondisi apabila user tdk boleh melewati jalur tertentu

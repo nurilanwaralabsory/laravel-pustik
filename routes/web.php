@@ -26,7 +26,7 @@ Route::get('/', function () {
 //     return view('dashboard');
 // })->middleware('auth')->name('admin');
 
-Route::get('/dashboard', [BorrowerController::class, 'index'])->middleware(['auth'])->name('admin');
+Route::get('/dashboard', [BorrowerController::class, 'index'])->middleware(['auth', 'role:admin'])->name('admin');
 
 Route::get('/index', [FrontController::class, 'index'])->middleware(['auth', 'verified'])->name('user');
 Route::get('/books', [FrontController::class, 'books'])->middleware(['auth', 'verified'])->name('books');
