@@ -14,7 +14,7 @@
                                     @foreach ($books as $book)
                                         <div class="item">
                                             <div class="thumb">
-                                                <img style="height: 45vh" src="{{ asset('upload' . '/' . $book->cover) }}"
+                                                <img style="height: 45vh;" src="{{ asset('upload' . '/' . $book->cover) }}"
                                                     alt="">
                                                 <div class="hover-effect">
                                                     <h6><a href="{{ url('detail' . '/' . $book->id) }}">Details</a></h6>
@@ -26,7 +26,27 @@
                                 </div>
                             </div>
                         </div>
-                        
+                        <div class="col-lg-4">
+                            <div class="top-downloaded">
+                                <div class="heading-section">
+                                    <h4><em>Novel</em> Books</h4>
+                                </div>
+                                <ul>
+                                    @foreach ($books->take(3) as $book)
+                                        <a href="{{ url('detail' . '/' . $book->id) }}">
+                                            <li class="mb-0">
+                                                <img src="{{ asset('upload' . '/' . $book->cover) }}" alt=""
+                                                    class="templatemo-item">
+                                                <h4>{{ $book->title }}</h4>
+                                                <h6>{{ $book->author }}</h6>
+                                                <span><i class="fa fa-star" style="color: yellow;"></i> 4.9</span>
+                                                <span><i class="fa fa-download" style="color: #ec6090;"></i> 2.2M</span>
+                                            </li>
+                                        </a>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                     <!-- ***** Featured Games End ***** -->
 
