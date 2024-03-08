@@ -82,18 +82,18 @@
                                 <div class="row">
                                     @foreach ($books as $book)
                                         <div class="col-lg-3 col-sm-6">
-                                            <a href="{{ url('detail' . '/' . $book->id) }}">
-                                                <div class="item">
+                                            <div class="item">
+                                                <a href="{{ url('detail' . '/' . $book->id) }}">
                                                     <img src="{{ asset('upload' . '/' . $book->cover) }}"
                                                         alt="">
                                                     <h4>
                                                         {{ $book->title }}<br><span>{{ $book->author }}</span>
                                                     </h4>
-                                                </div>
-                                            </a>
+                                                </a>
+                                            </div>
                                         </div>
+                                    @endforeach
                                 </div>
-                                @endforeach
                                 <div class="col-lg-12">
                                     <div class="main-button">
                                         <a href="{{ route('books') }}">Discover Popular</a>
