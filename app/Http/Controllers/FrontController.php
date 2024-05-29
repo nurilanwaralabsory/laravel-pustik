@@ -13,16 +13,21 @@ class FrontController extends Controller
     public function index()
     {
         $books = Book::paginate(8);
+        $borrowers = Borrower::all();
         return view('index', [
-            'books' => $books
+            'books' => $books,
+            'borrowers' => $borrowers
         ]);
     }
 
     public function books()
     {
         $books = Book::all();
+        $borrowers = Borrower::all();
         return view('books', [
-            'books' => $books
+            'books' => $books,
+            'borrowers' => $borrowers
+
         ]);
     }
     public function detail(Request $request)
@@ -44,6 +49,4 @@ class FrontController extends Controller
             'date' => $date
         ]);
     }
-
-
 }

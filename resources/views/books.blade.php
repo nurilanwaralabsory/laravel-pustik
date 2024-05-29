@@ -59,20 +59,24 @@
                                 </div>
                                 <div class="row">
                                     @foreach ($books as $book)
-                                        <div class="col-lg-3 col-sm-6">
-                                            <a href="{{ route('detail', $book->id) }}">
-                                                <div class="item">
-                                                    <img src="{{ asset('upload' . '/' . $book->cover) }}" alt="">
-                                                    <h4 class="d-block">
-                                                        {{ $book->title }}<br><span>{{ $book->author }}</span>
-                                                    </h4>
-                                                    @if ($book->borrowers)
-                                                        <h6 class="badge badge-sm bg-danger">DIPINJAM</h6>
-                                                    @else
-                                                        <h6 class="badge badge-sm bg-success">TERSEDIA</h6>
-                                                    @endif
-                                                </div>
-                                            </a>
+                                    <div class="col-lg-3 col-sm-6">
+                                        <a href="{{ route('detail', $book->id) }}">
+                                            <div class="item">
+                                                <img src="{{ asset('upload' . '/' . $book->cover) }}" alt="">
+                                                <h4 class="d-block">
+                                                    {{ $book->title }}<br><span>{{ $book->author }}</span>
+                                                </h4>
+                                                @php $isBorrowed = false; @endphp  @foreach ($borrowers as $borrower)
+                                                @if ($book->id == $borrower->book_id && $borrower->status == 'borrowed')
+                                                    <h6 class="badge badge-sm bg-danger">DIPINJAM</h6>
+                                                    @php $isBorrowed = true; @endphp  @break;
+                                                @endif
+                                                @endforeach
+
+                                                @if (!$isBorrowed)  <h6 class="badge badge-sm bg-success">TERSEDIA</h6>
+                                                @endif
+                                            </div>
+                                        </a>
                                         </div>
                                     @endforeach
                                 </div>

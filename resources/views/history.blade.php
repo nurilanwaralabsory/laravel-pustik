@@ -27,7 +27,7 @@
                                                         @if ($borrower->status == 'borrowed')
                                                             <h5 class="my-2">Waktu
                                                                 <div class="d-inline" style="color: #e75e8d">
-                                                                    {{ Carbon\Carbon::parse($borrower->created_at)->addDays(7)->format('d') - $date }}
+                                                                    {{ Carbon\Carbon::parse($borrower->created_at)->addDays(7)->format('d') }}
                                                                     hari
                                                                     lagi</div>
                                                             </h5>
